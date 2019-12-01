@@ -1,0 +1,124 @@
+fn main(){
+    let integer =vec! [1,5,2,3];
+    let result = largest_i32(&integer);
+    println!{"{}", result};
+
+}
+
+fn largest_i32(list: &[i32]) -> i32 {
+    let mut largest = list[0];
+    for &items in list.iter(){
+        if items > largest {
+            largest = items;
+        }
+    }
+    largest
+}
+
+X---------------------------X
+#[derive(Debug)]
+struct Point{
+    x: i32,
+    y: i32
+
+}
+fn main(){
+    let p1=Point{
+    x:50,
+    y:6989
+    };
+    println!("{:?}",p1);
+}
+
+X--------------------------X
+
+#[derive(Debug)]
+struct Point<T>{
+    x: T,
+    y: T
+
+}
+fn main(){
+    let p1=Point{
+    x:19,
+    y:20
+    };
+    println!("{:?}",p1);
+
+    let p2=Point{
+        x:12.5,
+        y:11.5
+    };
+    println!("{:?}",p2);
+
+}
+
+
+X--------------------------------X
+#[derive(Debug)]
+struct Point<T>{
+    x: T,
+    y: T,
+    z: T
+
+}
+impl<T> Point<T>{
+
+    fn hell(&self)->&T
+
+    {
+        &self.x
+    }
+}
+fn main(){
+    let p1=Point{
+    x:19,
+    y:20,
+    z:12
+    };
+    println!("{:?}",p1);
+
+    let p2=Point{
+        x:12.5,
+        y:11.5,
+        z:11.5
+    };
+    println!("{:?}",p2);
+
+}
+
+X----------------------------------------------X
+
+#[derive(Debug)]
+struct Point<T,U>{
+    x: T,
+    y: U
+}
+impl<T,U> Point<T,U>{
+    fn mixup<V,W>(self,other:Point<V,W>)->Point<T,W>
+    {
+        Point{
+            x:self.x,
+            y:other.y
+        }
+    }
+}
+
+
+fn main(){
+    let p1=Point{
+    x:19,
+    y:'y'
+    };
+    println!("{:?}",p1);
+
+    let p2=Point{
+        x:8,
+        y:"Shaheer"
+        };
+    println!{"{:?}",p2};
+    let p3=p2.mixup(p1);
+    println!{"point 3 {:?}",p3 };
+
+}
+X--------------------------X
